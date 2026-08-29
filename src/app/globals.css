@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-ice text-navy font-sans;
+  }
+  ::selection {
+    @apply bg-blue-cade/30 text-navy;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-yellow-cade px-8 py-4 text-lg font-bold text-navy
+      transition-all duration-300 hover:bg-yellow-cade-light hover:shadow-lg hover:shadow-yellow-cade/20
+      focus:outline-none focus:ring-4 focus:ring-yellow-cade/40 active:scale-[0.98];
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/30 px-6 py-3 text-base font-semibold text-white
+      transition-all duration-300 hover:border-white/60 hover:bg-white/10
+      focus:outline-none focus:ring-4 focus:ring-white/20;
+  }
+  .section-padding {
+    @apply px-4 py-16 md:px-8 md:py-24 lg:py-28;
+  }
+  .container-narrow {
+    @apply mx-auto max-w-6xl;
+  }
+  .card {
+    @apply rounded-xl border border-gray-200/60 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md;
+  }
+  .card-navy {
+    @apply rounded-xl border border-white/10 bg-navy-light p-6 shadow-lg;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold tracking-wide uppercase;
+  }
+  .gradient-navy {
+    background: linear-gradient(180deg, #0B1F3A 0%, #112D52 50%, #0B1F3A 100%);
+  }
+  .gradient-navy-bottom {
+    background: linear-gradient(180deg, #0B1F3A 0%, #0D2440 100%);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Floating words animation in hero */
+.floating-word {
+  @apply absolute text-white/[0.06] font-black text-2xl md:text-4xl select-none pointer-events-none;
+  animation: float 6s ease-in-out infinite;
+}
+.floating-word:nth-child(odd) {
+  animation-delay: -3s;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-navy-dark;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-blue-cade/40 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-blue-cade/60;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
