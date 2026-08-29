@@ -4,7 +4,7 @@ export const productConfig = {
   tagline: 'Você não precisa ler uma questão procurando tudo. Leia sabendo o que precisa encontrar.',
   price: '19,90',
   installments: '2x de 9,95',
-  checkoutUrl: null as string | null,     // URL do checkout — null = "#"
+  checkoutUrl: 'https://pay.kirvano.com/6ce3c3ea-ec00-4d6e-ad5a-28281041e298',
   guaranteeDays: 7,
   pixEnabled: true,
   cardEnabled: true,
