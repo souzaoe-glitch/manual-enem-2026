@@ -25,7 +25,7 @@ export const productConfig = {
   }>,
   analytics: {
     ga4Id: null as string | null,
-    metaPixelId: null as string | null,
+    metaPixelId: '1830661995038457',
   },
   supportUrl: null as string | null,
   supportEmail: null as string | null,
