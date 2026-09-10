@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { getCheckoutUrl } from '@/config/product';
+import { fbEvents } from './FacebookPixel';
 import Link from 'next/link';
 
 const navLinks = [
@@ -51,6 +52,7 @@ export default function Header() {
         <div className="hidden lg:block">
           <a
             href={getCheckoutUrl()}
+            onClick={() => fbEvents.initiateCheckout()}
             className="btn-primary bg-blue-cade hover:bg-[#185bc0] text-ice font-bold py-2 px-6 rounded-full transition-all transform hover:scale-105 inline-block"
           >
             QUERO O MANUAL
@@ -84,7 +86,7 @@ export default function Header() {
             <a
               href={getCheckoutUrl()}
               className="btn-primary bg-blue-cade text-center text-ice font-bold py-3 px-6 rounded-full w-full mt-4 block"
-              onClick={() => setIsOpen(false)}
+              onClick={() => { fbEvents.initiateCheckout(); setIsOpen(false); }}
             >
               QUERO O MANUAL
             </a>

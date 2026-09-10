@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { getCheckoutUrl } from '@/config/product';
+import { fbEvents } from './FacebookPixel';
 import Link from 'next/link';
 
 export default function ReviewSheet() {
@@ -18,6 +19,7 @@ export default function ReviewSheet() {
           <div className="flex justify-center md:justify-start">
             <Link 
               href={checkoutUrl}
+              onClick={() => fbEvents.initiateCheckout()}
               className="inline-block bg-blue-cade text-white font-bold py-4 px-8 rounded-full text-lg hover:bg-blue-cade/90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
             >
               QUERO ESSA FOLHA NO MEU MATERIAL

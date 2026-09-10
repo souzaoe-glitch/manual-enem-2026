@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import { getCheckoutUrl, getFormattedPrice } from '@/config/product';
+import { fbEvents } from './FacebookPixel';
 import Link from 'next/link';
 
 export default function MobileStickyCTA() {
@@ -56,6 +57,7 @@ export default function MobileStickyCTA() {
             <div className="flex items-center gap-3">
               <Link 
                 href={getCheckoutUrl()}
+                onClick={() => fbEvents.initiateCheckout()}
                 className="bg-green-cade text-navy text-xs font-black py-2 px-4 rounded-full shadow-lg"
               >
                 QUERO ACESSAR

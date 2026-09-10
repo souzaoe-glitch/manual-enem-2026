@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Check } from 'lucide-react'
 import { getFormattedPrice, getCheckoutUrl } from '@/config/product'
+import { fbEvents } from './FacebookPixel'
 
 const INCLUSIONS = [
   'Ebook completo, 25 páginas',
@@ -72,6 +73,7 @@ export function Offer() {
               
               <a 
                 href={checkoutUrl}
+                onClick={() => fbEvents.initiateCheckout()}
                 className="block w-full py-5 px-8 bg-green-cade hover:brightness-110 text-navy text-center font-black text-xl rounded-xl transition-all shadow-lg shadow-green-cade/20 active:scale-95 uppercase tracking-wide"
               >
                 QUERO ACESSAR O MANUAL AGORA

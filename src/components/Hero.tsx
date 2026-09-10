@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { getCheckoutUrl } from '@/config/product';
+import { fbEvents } from './FacebookPixel';
 import Link from 'next/link';
 
 const floatingWords = [
@@ -67,6 +68,7 @@ export default function Hero() {
             <div className="pt-4 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
               <a
                 href={getCheckoutUrl()}
+                onClick={() => fbEvents.initiateCheckout()}
                 className="btn-primary w-full sm:w-auto bg-green-cade hover:bg-[#1a8a58] text-ice font-bold py-4 px-8 rounded-lg shadow-[0_4px_14px_0_rgba(32,163,106,0.39)] transition-all transform hover:-translate-y-1 text-center"
               >
                 QUERO DOMINAR A LEITURA DAS QUESTÕES

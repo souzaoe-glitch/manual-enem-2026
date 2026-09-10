@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { getCheckoutUrl } from '@/config/product'
+import { fbEvents } from './FacebookPixel'
 
 export function FinalCTA() {
   const checkoutUrl = typeof getCheckoutUrl === 'function' ? getCheckoutUrl() : (getCheckoutUrl || '#')
@@ -26,6 +27,7 @@ export function FinalCTA() {
           
           <a 
             href={checkoutUrl}
+            onClick={() => fbEvents.initiateCheckout()}
             className="inline-block py-5 px-10 bg-blue-cade hover:bg-blue-cade/90 text-white font-bold text-xl rounded-xl transition-all shadow-lg hover:shadow-blue-cade/20 active:scale-95 mb-6"
           >
             QUERO O MANUAL DAS PALAVRAS-CHAVE

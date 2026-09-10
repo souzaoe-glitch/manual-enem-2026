@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { PlayCircle, ArrowRight, Check } from 'lucide-react';
 import { productConfig } from '@/config/product';
+import { fbEvents } from './FacebookPixel';
 
 export default function InteractiveDemo() {
   const [step, setStep] = useState(0);
@@ -169,6 +170,7 @@ export default function InteractiveDemo() {
           >
             <a 
               href={productConfig?.checkoutUrl || "#"} 
+              onClick={() => fbEvents.initiateCheckout()}
               className="inline-flex items-center justify-center bg-green-cade hover:bg-green-600 text-white font-bold text-lg py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
             >
               AGORA EU ENTENDI O MÉTODO
