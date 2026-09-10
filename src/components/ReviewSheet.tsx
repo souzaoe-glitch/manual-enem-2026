@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image';
 import { getCheckoutUrl } from '@/config/product';
 import { fbEvents } from './FacebookPixel';
